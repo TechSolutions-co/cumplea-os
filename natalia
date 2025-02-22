@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .contenedor {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .animacion {
+      font-size: 2em;
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flotar 5s infinite;
+    }
+
+    @keyframes flotar {
+      0% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -20px); }
+      100% { transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>¡Feliz Cumpleaños!</h1>
+    <p>
+      Querida Natalia,<br><br>
+      En este día tan especial, quiero desearte un feliz cumpleaños lleno de amor, alegría y momentos inolvidables. Eres una persona increíble, y estoy muy agradecido por conocerte y compartir momentos contigo. Que este nuevo año esté lleno de bendiciones, éxitos y sueños cumplidos.<br><br>
+      ¡Que lo disfrutes al máximo! 🎉🎂🎁<br><br>
+      Con cariño,<br>
+     pues yo ajjaj
+    </p>
+    <div class="animacion">🎈</div>
+  </div>
+
+  <script>
+    // Ejemplo: Agregar más globos animados
+    const contenedor = document.querySelector('.contenedor');
+
+    function crearGlobo() {
+      const globo = document.createElement('div');
+      globo.innerHTML = '🎈';
+      globo.style.position = 'absolute';
+      globo.style.left = Math.random() * 100 + '%';
+      globo.style.fontSize = Math.random() * 30 + 20 + 'px';
+      globo.style.animation = `flotar ${Math.random() * 5 + 3}s infinite`;
+      contenedor.appendChild(globo);
+
+      setTimeout(() => {
+        globo.remove();
+      }, 8000); // Eliminar el globo después de 8 segundos
+    }
+
+    setInterval(crearGlobo, 1000); // Crear un globo cada segundo
+  </script>
+</body>
+</html>
